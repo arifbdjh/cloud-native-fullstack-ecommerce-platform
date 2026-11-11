@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ecommerce-frontend:latest
+          image: arifbdjh/ecommerce-frontend:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

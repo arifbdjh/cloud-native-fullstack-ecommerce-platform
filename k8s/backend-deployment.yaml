@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ecommerce-backend:latest
+          image: arifbdjh/ecommerce-backend:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
@@ -30,7 +30,7 @@ spec:
                   name: ecommerce-secret
                   key: POSTGRES_PASSWORD
             - name: DATABASE_URL
-              value: "postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres:5432/ecommerce_db"
+              value: "postgresql+psycopg2://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres:5432/ecommerce_db"
             - name: REDIS_URL
               valueFrom:
                 configMapKeyRef:
